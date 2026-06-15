@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>무료 모바일청첩장 만드는 방법</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="hero">
+  <p class="label">FREE MOBILE WEDDING INVITATION</p>
+  <h1>무료 모바일청첩장<br>만드는 방법</h1>
+  <p class="desc">
+    GitHub를 이용해 모바일청첩장을 직접 수정하고 배포하는 방법을
+    초보자도 따라할 수 있도록 정리했습니다.
+  </p>
+
+  <div class="sample-box">
+    <p>💌 프링의 모바일청첩장 확인하기</p>
+    <a href="https://dojae-bora.github.io/wedding-day/" target="_blank">
+      https://dojae-bora.github.io/wedding-day/
+    </a>
+  </div>
+<br>
+<div class="sample-box">
+  <h3>📦 모바일청첩장 파일 다운로드</h3>
+
+  <div class="theme-download">
+    <span>🌷 핑크 버전</span>
+    <a href="download/pink.zip" download>
+      다운로드
+    </a>
+  </div>
+
+  <div class="theme-download">
+    <span>💙 네이비 버전</span>
+    <a href="download/navy.zip" download>
+      다운로드
+    </a>
+  </div>
+
+  <div class="theme-download">
+    <span>🌿 그린 버전</span>
+    <a href="download/green.zip" download>
+      다운로드
+    </a>
+  </div>
+
+</div>
+  <p class="download-desc">
+    <br>프링이가 사용하는 네이비버전 외 핑크, 그린 버전도 만들어 두었습니다<br>마음에 드시는 모바일청첩장으로 사용하세요:)
+  </p>
+</div>
+</header>
+<main>
+  <h2><다운로드 받은 파일을 먼저 확인해 주세요></h2>
+  <p>
+    💡첨부해드린 모바일청첩장 파일을 다운로드한 뒤,
+    PC로 먼저 수정하고 html파일을 여러번 열어보며 확인 후
+    GitHub에 업로드하는 것이 가장 편합니다.
+    (github에 업로드 후 commit시 시간이 1~2분 소요 됨)
+  </p>
+
+<div class="step-image">
+  <img src="images/셀프청첩장파일.jpg" alt="셀프청첩장파일">
+</div>
+
+</section>
+
+<section>
+  <h2>파일 수정 방법</h2>
+
+  <div class="card">
+    <span>1단계</span>
+    <h3>index.html 수정하기</h3>
+
+<div class="step-image">
+  <img src="images/1.jpg" alt="1">
+</div>
+
+    <p>
+      💡신랑신부 이름, 혼주 성함, 식장 이름, 홀 이름,
+      결혼식 날짜와 시간, 약도 등을 수정할 수 있습니다.
+    </p>
+    <p class="tip">
+      문구 작성 시 글자 사이에 <code>&lt;br&gt;</code>을 넣으면 줄바꿈이 됩니다.
+    </p>
+  </div>
+
+  <div class="card">
+    <span>2단계</span>
+    <h3>사진 추가하기</h3>
+    <p>
+      💡갤러리 사진을 추가하려면 아래 코드를 복사한 뒤,
+      사진 번호만 변경해서 사용하세요.
+    </p>
+    <pre><code>&lt;div class="gallery-item"&gt;
+  &lt;img src="images/photo0.jpg" alt="갤러리0"
+  onclick="openModal(this.src)"
+  onerror="this.parentNode.style.display='none';"&gt;
+&lt;/div&gt;</code></pre>
+<div class="step-image">
+  <img src="images/2.jpg" alt="2">
+<div class="step-image">
+  <img src="images/3.jpg" alt="3">
+  </div>
+
+  <div class="card">
+    <span>3단계</span>
+    <h3>약도와 지도 링크 수정하기</h3>
+    <p>
+      💡index.html과 script.js에서 약도 내용을 수정할 수 있습니다.
+    </p>
+    <ul>
+      <li>카카오맵, 네이버지도, T맵은 각 앱에서 공유 링크를 복사해 붙여넣어 주세요.</li>
+<div class="step-image">
+  <img src="images/4.jpg" alt="4">
+<br>
+      <li>위도와 경도는  <a href="http://www.findlatlng.org//" target="_blank">
+      https://dojae-bora.github.io/wedding-day/
+    </a> 사이트에서 확인할 수 있습니다.</li>
+<div class="step-image">
+  <img src="images/5.jpg" alt="5">
+<div class="step-image">
+  <img src="images/6.jpg" alt="6">
+<br>
+      <li>네비게이션 좌표는 모바일청첩장 배포 후 버튼을 눌렀을 때 사용됩니다.<br>배포전 하얀배경 정상 입니다.</li>
+    </ul>
+<div class="step-image">
+  <img src="images/7.jpg" alt="7">
+  </div>
+
+  <div class="card">
+    <span>4단계</span>
+    <h3>날짜 수정하기</h3>
+    <p>
+      💡script.js 맨 위에 있는 날짜를 수정하면 달력과 D-day 날짜가 변경됩니다.
+    </p>
+    <p class="tip">
+      기본 날짜는 2027년 1월 1일 12시 00분으로 설정되어 있습니다.
+    </p>
+<div class="step-image">
+  <img src="images/8.jpg" alt="8">
+  </div>
+</section>
+
+<section>
+  <h2>GitHub 가입하기</h2>
+
+  <div class="card">
+    <h3>1. GitHub 사이트 접속</h3>
+    <p>
+      💡 <a href="https://github.com/" target="_blank">https://github.com/</a>
+      접속 후 오른쪽 위 Sign up 버튼을 클릭합니다.
+    </p>
+<div class="step-image">
+  <img src="images/9.jpg" alt="9">
+<div class="step-image">
+  <img src="images/10.jpg" alt="10">
+  </div>
+
+  <div class="card">
+    <h3>2. 회원가입하기</h3>
+    <ul>
+      <li>자주 사용하는 이메일을 입력합니다.</li>
+      <li>영어, 숫자, 특수문자를 섞어 비밀번호를 만듭니다.</li>
+      <li>GitHub 아이디를 입력합니다.</li>
+    </ul>
+    <p class="tip">
+      아이디는 모바일청첩장 주소 맨 앞에 들어가므로 신중히 정해주세요.
+      언더바(_)는 사용할 수 없고, 하이픈(-)은 사용할 수 있습니다.
+    </p>
+<div class="step-image">
+  <img src="images/11.jpg" alt="11">
+  </div>
+
+  <div class="card">
+    <h3>3. 로봇 확인과 이메일 인증</h3>
+    <p>
+      💡퍼즐 또는 그림 인증을 진행한 뒤,
+      입력한 이메일로 온 인증 메일을 확인하면 가입이 완료됩니다.
+    </p>
+<div class="step-image">
+  <img src="images/12.jpg" alt="12">
+  </div>
+</section>
+
+<section>
+  <h2>모바일청첩장 배포하기</h2>
+
+  <div class="card">
+    <span>1단계</span>
+    <h3>새 저장소 만들기</h3>
+    <p>
+      💡GitHub 로그인 후 왼쪽의 New 버튼 또는 오른쪽 위 + 버튼을 눌러
+      New repository를 클릭합니다.
+    </p>
+<div class="step-image">
+  <img src="images/13.jpg" alt="13">
+<div class="step-image">
+  <img src="images/14.jpg" alt="14">
+<br>
+    <p>
+      💡Repository name에는 주소 뒤에 붙을 이름을 입력합니다.
+    </p>
+    <pre><code>예시 주소:
+https://아이디.github.io/레포리지이름/</code></pre>
+<div class="step-image">
+  <img src="images/15.jpg" alt="15">
+  </div>
+
+  <div class="card">
+    <span>2단계</span>
+    <h3>GitHub Pages 활성화</h3>
+    <p>
+      💡Settings → Pages 메뉴로 이동한 뒤 아래처럼 설정합니다.
+    </p>
+    <ul>
+      <li>Source: Deploy from a branch</li>
+      <li>Branch: main</li>
+      <li>Folder: /root</li>
+      <li>Save 클릭</li>
+    </ul>
+    <p class="tip">
+      몇 분 후 https://아이디.github.io/저장소이름/ 형태의 주소가 생성됩니다.
+    </p>
+<div class="step-image">
+  <img src="images/16.jpg" alt="16">
+  </div>
+
+  <div class="card">
+    <span>3단계</span>
+    <h3>파일 업로드하기</h3>
+    <p>
+      💡저장소 메인 화면에서 Add file → Upload files를 클릭한 뒤,
+      모바일청첩장파일 내에 있는 파일들을 모두 업로드합니다.
+    </p>
+<div class="step-image">
+  <img src="images/17.jpg" alt="17">
+<br>
+    <p>
+      💡index.html, style.css, script.js images폴더, music폴더fmf 업로드 후 Commit changes 버튼을 누르면 저장됩니다.
+    </p>
+<div class="step-image">
+  <img src="images/18.jpg" alt="18">
+  </div>
+</section>
+
+<section class="structure">
+  <h2>최종 파일 구조</h2>
+ <p>
+      💡업로드가 잘 되었는지 확인 후 1~2분 뒤에 내 청첩장 주소로 들어가본다. 카카오톡링크도 잘 나오는지 확인이 되면 완성!!!<br>👉🏻 https://아이디.github.io/저장소이름/
+    </p>
+<br>
+  <pre><code>images/
+ ├─ main.jpg
+ ├─ photo1.jpg
+ ├─ photo2.jpg
+ ├─ photo3.jpg
+ └─ kakao-thumb.jpg
+
+music/
+ └─ bam.mp3
+
+index.html
+script.js
+style.css</code></pre>
+<div class="step-image">
+  <img src="images/19.jpg" alt="19">
+</section>
+
+
+<div class="sample-box">
+
+    <p>🎵 모청용 음악 AI로 만들기</p>
+
+    <p>
+      💡 SUNO 앱을 다운로드한 후<br>
+      스타일(Style) 칸에 원하는 음악 프롬프트를 작성하여
+      배경음악을 제작합니다.<br>제가 첨부해드린 음악도 suno를 이용해 만든 음악입니다.
+    </p>
+
+    <div class="step-image">
+      <img src="images/20.jpg" alt="SUNO 사용방법 1">
+    </div>
+
+    <div class="step-image">
+      <img src="images/21.jpg" alt="SUNO 사용방법 2">
+    </div>
+
+</div>
+
+<footer>
+  <p>모바일청첩장 만드시다가 궁금하신 사항은<br>'프링로그' <a href="https://m.blog.naver.com/b_0ra_/224315862806" target="_blank">
+      https://m.blog.naver.com/b_0ra_/224315862806
+    </a> 로<br>
+비밀댓글 남겨주시면 최대한 빠르게 답변 드리겠습니다<br><br><br>© 프링이의 무료 모바일청첩장 가이드북</p>
+</footer>
+
+</main>
+
+</body>
+</html>
